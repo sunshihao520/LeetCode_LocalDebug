@@ -52,15 +52,14 @@ using namespace std;
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        int j = nums.size();
-        int count =0;
-        for(int i =1;i<j;i++)
-        {
-            if(nums[count]!=nums[i]){
-                nums[++count]=nums[i];
-            }
-        }
-        return j==0?0:count+1;
+       int n = nums.size();
+       int i =0;
+       for(int j=1;j<n;j++){
+           if(nums[i]!=nums[j]){
+               nums[++i]=nums[j];
+           }
+       }
+       return n==0?0:i+1;
     }
 };
 //leetcode submit region end(Prohibit modification and deletion)
@@ -69,8 +68,8 @@ public:
 int main()
 {
     Solution s;
-    vector<int> data{7, 1, 5, 3, 6, 4};
-    //vector<int> ans = s.twoSum(data,11);
+    vector<int> data{1,1,1,3,4,5};
+    int ans = s.removeDuplicates(data);
     //cout << ans[0]<<ans[1]<<endl;
-    cout<<"Hello LeetCode"<<endl;
+    cout<<ans<<endl;
 }
